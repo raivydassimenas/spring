@@ -39,12 +39,12 @@ import java.sql.SQLException;
 
 public class JdbcRestaurantRepository implements RestaurantRepository {
 
-	private DataSource dataSource;
+//	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplate;
 
-	public JdbcRestaurantRepository(DataSource dataSource) {
-		this.dataSource = dataSource;
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	public JdbcRestaurantRepository(JdbcTemplate jdbcTemplate) {
+//		this.dataSource = dataSource;
+		this.jdbcTemplate = jdbcTemplate;
 	}
 
 	public Restaurant findByMerchantNumber(String merchantNumber) {
