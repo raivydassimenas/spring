@@ -3,7 +3,7 @@ dependencies {
 }
 
 test {
-    exclude '**/RewardNetworkTests.class'
+    // exclude '**/RewardNetworkTests.class'
     exclude '**/RewardNetworkPropagationTests.class'
     exclude '**/RewardNetworkSideEffectTests.class'
 }
