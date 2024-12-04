@@ -68,6 +68,12 @@ public class RewardsApplication {
         };
     }
 
+    @Bean
+    CommandLineRunner commandLineRunner2(RewardsRecipientProperties rewardsRecipientProperties) {
+        return args -> System.out.println("Recipient: " + rewardsRecipientProperties.getName());
+    }
+
+
     // TODO-07 (Optional): Enable full debugging in order to observe how Spring Boot
     //           performs its auto-configuration logic
     // - Follow TO-DO-07 in application.properties, then come back here.
