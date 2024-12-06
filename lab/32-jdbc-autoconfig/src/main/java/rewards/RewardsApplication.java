@@ -1,11 +1,13 @@
 package rewards;
 
+import config.RewardsConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 // TODO-00 : In this lab, you are going to exercise the following:
@@ -38,7 +40,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 // TODO-13 (Optional) : Follow the instruction in the lab document.
 //           The section titled "Build and Run using Command Line tools".
-@SpringBootApplication
+@SpringBootApplication(exclude = {org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration.class})
+@Import(RewardsConfig.class)
 public class RewardsApplication {
     static final String SQL = "SELECT count(*) FROM T_ACCOUNT";
 
